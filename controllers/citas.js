@@ -15,8 +15,9 @@ exports.consultar = (req, res) => {
     
 }
 exports.consultarPorID = (req, res) => {
+    const {id} = req.body
     modelo
-        .consultarPorID(req.params.id)
+        .consultarPorID(id)
         .then(resultados => {
             return res.send(comunes.respuestaConsulta(resultados))
         })
